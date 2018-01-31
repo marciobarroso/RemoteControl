@@ -6,28 +6,41 @@
 
 #include <StandardCplusplus.h>
 #include <vector>
+#include <Arduino.h>
 
 using namespace std;
 
 #ifndef RemoteControl_h
 #define RemoteControl_h
 
-struct CHANNEL {
-  int number;
-  int pin;
-  int value;
+class RemoteControlChannel {
+
+    int _number;
+    int _pin;
+    int _maxPulse = 1890;
+    int _minPulse = 1093;
+
+    public:
+        RemoteControlChannel(int channel, int pin);
+        int getChannel();
+        int getPin();
+        int getPulse();
+        int getDegrees(int limit);
+        int getPWM();
+
 };
 
 class RemoteControl {
 
-  std::vector<CHANNEL> data;
+    std::vector<RemoteControlChannel> data;
 
-  public:
-    void bind(int channel, int pin);
-    std::vector<CHANNEL> getData();
+    public:
+        void bind(int channel, int pin);
+        void bind(int channel, int pin, int minPulse, int maxPulse);
+        std::vector<RemoteControlChannel> getData();
+        int getChannelCount();
+        RemoteControlChannel getChannel(int channel);
 
-  private:
-    int convertPulseToPWM(int pulse);
 };
 
 #endif
