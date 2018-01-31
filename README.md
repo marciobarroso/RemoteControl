@@ -2,8 +2,7 @@ Arduíno RemoteControl
 =====================
 This is a [Arduino](https://www.arduino.cc/) library to easily connect the board to a remote control.
 
-Example
-==============
+# Example
 
 ```cpp
 #include <StandardCplusplus.h>
@@ -12,7 +11,7 @@ Example
 
 using namespace std;
 
-// instance of RemoteControl 
+// instance of RemoteControl
 RemoteControl rc;
 
 void setup() {
@@ -41,3 +40,5 @@ void loop() {
   delay(15);
 }
 ```
+
+If you open the Serial Monitor on Arduino IDE, you will see the read of the data from the remote control
