@@ -12,6 +12,7 @@ Example
 
 using namespace std;
 
+// instance of RemoteControl 
 RemoteControl rc;
 
 void setup() {
