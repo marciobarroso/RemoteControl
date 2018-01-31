@@ -2,6 +2,7 @@
  * Library to use easily a remote controll with arduino
  * Created by Marcio A. Barroso, January 30th 2018
  * Released into the public domain.
+ * Version: 0.0.2 - January 31st 2018
  */
 
 #include <arduino.h>
